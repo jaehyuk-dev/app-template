@@ -35,6 +35,16 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
 
+  google_mobile_ads: ^5.3.1   # Google Admob
+
+  sqflite: ^2.3.0             # DB - sqlite
+  loading_indicator: ^3.1.1   # custom loading indicator
+  intl: ^0.20.2               # formating
+  url_launcher: ^6.3.1        # link to others
+
+  shared_preferences: ^2.5.2  # storage
+  change_app_package_name: ^1.5.0 # chage app package name
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
