@@ -1,5 +1,8 @@
 import 'package:app_template/screen/main_screen.dart';
+import 'package:app_template/service/loading_service.dart';
+import 'package:app_template/widget/custom_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/admob_config.dart';
@@ -16,7 +19,14 @@ void main() async {
     await saveFirstRunCompleted();
   }
 
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => LoadingState()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -44,7 +54,15 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: MainScreen(),
+      home: Builder(
+        builder: (context) {
+          // 앱이 시작될 때 LoadingService 초기화
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            LoadingService.init(context);
+          });
+          return MainScreen();
+        },
+      ),
     );
   }
 }
