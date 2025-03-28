@@ -2,6 +2,7 @@ import 'package:app_template/screen/main_screen.dart';
 import 'package:app_template/service/loading_service.dart';
 import 'package:app_template/widget/custom_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -18,6 +19,8 @@ void main() async {
     // 첫 실행 상태 저장
     await saveFirstRunCompleted();
   }
+
+  await MobileAds.instance.initialize();
 
   runApp(
     MultiProvider(
