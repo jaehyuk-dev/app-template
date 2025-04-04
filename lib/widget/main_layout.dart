@@ -77,6 +77,9 @@ class _MainLayoutState extends State<MainLayout> {
                   const BannerAdWidget(),
                   // BottomNavigationBar
                   BottomNavigationBar(
+                    backgroundColor: AppColor.mainWhite,
+                    selectedItemColor: AppColor.mainBlack,
+                    unselectedItemColor: AppColor.mainBlack.withAlpha(128),
                     currentIndex: widget.currentIndex,
                     onTap: widget.onTap,
                     items: widget.bottomNavItems!,

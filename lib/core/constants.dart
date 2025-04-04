@@ -2,6 +2,7 @@ import 'dart:ui';
 
 class AppColor{
   static Color mainWhite = Color(0xFFf0f1f2);
+  static Color mainBlack = Color(0xFF000000);
 }
 
 class AdMob{
