@@ -43,8 +43,6 @@ dependencies:
   url_launcher: ^6.3.1        # link to others
 
   shared_preferences: ^2.5.2  # storage
-  change_app_package_name: ^1.5.0 # chage app package name
-
   path_provider: ^2.1.2
 
   provider: ^6.1.2
@@ -60,6 +58,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.1
+  change_app_package_name: ^1.5.0 # chage app package name
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
