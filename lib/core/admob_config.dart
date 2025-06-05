@@ -75,8 +75,8 @@ class AdMobConfig {
         return false;
       }
 
-      // app/build.gradle 파일 경로
-      final gradlePath = 'android/app/build.gradle';
+      // app/build.gradle 파일 경로 (Kotlin DSL 사용)
+      final gradlePath = 'android/app/build.gradle.kts';
 
       // 파일 읽기
       final File gradleFile = File(gradlePath);
