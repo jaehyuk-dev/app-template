@@ -9,8 +9,17 @@ class DatabaseHelper {
 
   Future<Database> get database async {
     if (_database != null) return _database!;
-    // _database = await _initDatabase();
+    _database = await _initDatabase();
     return _database!;
+  }
+
+  Future<Database> _initDatabase() async {
+    final dbPath = await getDatabasesPath();
+    final path = '$dbPath/app_database.db';
+    return openDatabase(
+      path,
+      version: 1,
+    );
   }
 
   // Future<Database> _initDatabase() async {
